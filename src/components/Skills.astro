@@ -1,0 +1,102 @@
+---
+// Skills are defined here in the frontmatter as data arrays.
+// This keeps the HTML clean and makes updates easy — just edit the arrays.
+
+const aiSkills = [
+  'SmythOS Agent Architecture',
+  'Intelligent Workflow Automation',
+  'RAG Systems (Retrieval-Augmented Generation)',
+  'API Integration & Data Flow',
+  'Webhook Automation',
+  'Multi-platform Deployment',
+];
+
+const qaSkills = [
+  'Playwright',
+  'Cypress',
+  'Selenium / TestNG',
+  'REST & GraphQL API Testing',
+  'End-to-End Test Strategy',
+  'CI/CD Integration',
+  'Bug Reporting & Tracking',
+  'Test Case Design',
+];
+
+const techTags = [
+  'JavaScript',
+  'Java',
+  'SmythOS',
+  'ClickUp API',
+  'Stripe API',
+  'REST',
+  'GraphQL',
+  'Agile / Scrum',
+  'Web',
+  'Mobile',
+  'TV',
+];
+---
+
+<section id="skills" class="py-24 px-6 bg-navy-800/40">
+  <div class="max-w-4xl mx-auto">
+    <p class="font-mono text-accent text-sm mb-3" data-aos="fade-up">02. skills</p>
+    <h2 class="text-3xl sm:text-4xl font-bold text-slate-100 mb-12" data-aos="fade-up" data-aos-delay="100">What I Do</h2>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <!-- AI Development Card -->
+      <div class="rounded-xl border border-slate-800 bg-navy-800 p-6" data-aos="fade-right" data-aos-delay="150">
+        <div class="flex items-center gap-3 mb-5">
+          <!-- Icon -->
+          <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-slate-100">AI Development</h3>
+        </div>
+        <ul class="space-y-2">
+          {aiSkills.map((skill) => (
+            <li class="flex items-center gap-2 text-slate-400 text-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- QA Engineering Card -->
+      <div class="rounded-xl border border-slate-800 bg-navy-800 p-6" data-aos="fade-left" data-aos-delay="250">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-lg bg-purple-accent/10 border border-purple-accent/20 flex items-center justify-center">
+            <svg class="w-5 h-5 text-purple-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-slate-100">QA Engineering</h3>
+        </div>
+        <ul class="space-y-2">
+          {qaSkills.map((skill) => (
+            <li class="flex items-center gap-2 text-slate-400 text-sm">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-accent flex-shrink-0"></span>
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tech tags -->
+    <div data-aos="fade-up" data-aos-delay="300">
+      <p class="text-slate-500 text-sm mb-4 font-mono">technologies &amp; platforms</p>
+      <div class="flex flex-wrap gap-2">
+        {techTags.map((tag) => (
+          <span class="px-3 py-1 rounded-full text-xs font-mono border border-slate-700 bg-navy-800 text-slate-400 hover:border-accent/40 hover:text-accent transition-colors">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

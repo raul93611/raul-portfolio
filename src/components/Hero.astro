@@ -1,0 +1,91 @@
+---
+// No props needed — this section has fixed content
+---
+
+<section
+  id="home"
+  class="min-h-screen flex items-center justify-center relative overflow-hidden px-6"
+>
+  <!-- Subtle background grid -->
+  <div
+    class="absolute inset-0 bg-[linear-gradient(rgba(56,189,248,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.03)_1px,transparent_1px)] bg-[size:64px_64px]"
+  ></div>
+
+  <!-- Glowing orbs for depth — float class makes them slowly bob up/down -->
+  <div
+    class="float absolute top-1/4 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none"
+  ></div>
+  <div
+    class="float-slow absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-accent/5 rounded-full blur-3xl pointer-events-none"
+  ></div>
+
+  <div class="relative z-10 max-w-4xl w-full grid md:grid-cols-5 gap-12 items-center">
+
+    <!-- Left column: text content (3 of 5 cols) -->
+    <div class="md:col-span-3">
+      <!-- Badge -->
+      <div class="hero-fade-1 flex items-center gap-2 mb-6">
+        <span
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/30 bg-accent/5 text-accent text-sm font-mono"
+        >
+          <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+          Available for work
+        </span>
+      </div>
+
+      <!-- Name & Title -->
+      <h1 class="hero-fade-2 text-5xl sm:text-6xl font-bold tracking-tight mb-4">
+        <span class="text-slate-100">Leonardo</span>
+        <span class="block animated-gradient">Raul Velasco</span>
+      </h1>
+
+      <p class="hero-fade-3 text-xl sm:text-2xl text-slate-400 font-medium mb-6">
+        AI Agent Developer &amp; QA Engineer
+      </p>
+
+      <p class="hero-fade-4 text-slate-400 text-lg leading-relaxed mb-10">
+        I build intelligent automation systems with <span class="text-accent font-medium">SmythOS</span>
+        and ensure they work flawlessly with deep expertise in
+        <span class="text-accent font-medium">test automation</span>.
+        Building AI that's not just smart — but reliable.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-fade-5 flex flex-wrap gap-4">
+        <a
+          href="#projects"
+          class="px-6 py-3 rounded-lg bg-accent text-navy-900 font-semibold hover:bg-accent/90 transition-colors"
+        >
+          View Projects
+        </a>
+        <a
+          href="#contact"
+          class="px-6 py-3 rounded-lg border border-slate-700 text-slate-300 font-semibold hover:border-accent/50 hover:text-accent transition-colors"
+        >
+          Get in Touch
+        </a>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="hero-fade-5 mt-16 flex items-center gap-3 text-slate-600 text-sm">
+        <div class="w-px h-12 bg-gradient-to-b from-transparent to-slate-700"></div>
+        <span class="font-mono">scroll to explore</span>
+      </div>
+    </div>
+
+    <!-- Right column: photo (2 of 5 cols) -->
+    <div class="hero-fade-2 md:col-span-2 flex justify-center md:justify-end mb-8 md:mb-0">
+      <div class="relative">
+        <!-- Glowing ring behind the photo -->
+        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/30 to-purple-accent/20 blur-2xl scale-110"></div>
+        <!-- Photo -->
+        <img
+          src="/IMG_20221209_141905055~2.jpg"
+          alt="Leonardo Raul Velasco"
+          class="relative z-10 w-56 h-56 sm:w-64 sm:h-64 object-cover object-top rounded-2xl border border-slate-700/60"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,53 @@
+---
+// No props — static content section
+---
+
+<section id="about" class="py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    <!-- Section label -->
+    <p class="font-mono text-accent text-sm mb-3" data-aos="fade-up">01. about me</p>
+    <h2 class="text-3xl sm:text-4xl font-bold text-slate-100 mb-12" data-aos="fade-up" data-aos-delay="100">Who I Am</h2>
+
+    <div class="grid md:grid-cols-5 gap-12 items-start">
+      <!-- Text content — takes up 3 of 5 columns on desktop -->
+      <div class="md:col-span-3 space-y-5 text-slate-400 text-lg leading-relaxed" data-aos="fade-right" data-aos-delay="150">
+        <p>
+          I'm a software professional based in Peru with over
+          <span class="text-slate-200 font-medium">5 years of experience</span>
+          delivering high-quality software. My career started in QA engineering,
+          where I developed a rigorous eye for reliability and edge cases across
+          web, mobile, and TV platforms.
+        </p>
+        <p>
+          More recently, I've specialized in
+          <span class="text-accent font-medium">AI agent development using SmythOS</span>,
+          designing and building intelligent automation systems that connect APIs,
+          process data, and act autonomously — from generating release notes to
+          handling payment workflows.
+        </p>
+        <p>
+          This combination is rare: I don't just build AI agents — I also know how
+          to <span class="text-slate-200 font-medium">thoroughly test and validate</span> them.
+          That means fewer surprises in production.
+        </p>
+      </div>
+
+      <!-- Stats card — takes up 2 of 5 columns on desktop -->
+      <div class="md:col-span-2" data-aos="fade-left" data-aos-delay="250">
+        <div class="rounded-xl border border-slate-800 bg-navy-800 p-6 space-y-5">
+          {[
+            { number: '5+', label: 'Years of Experience' },
+            { number: '2', label: 'Core Specializations' },
+            { number: '6+', label: 'AI Agents Built' },
+            { number: '∞', label: 'Tests Written' },
+          ].map(({ number, label }) => (
+            <div class="flex items-center gap-4">
+              <span class="text-2xl font-bold text-accent font-mono w-12">{number}</span>
+              <span class="text-slate-400 text-sm">{label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

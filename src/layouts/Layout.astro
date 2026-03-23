@@ -1,0 +1,89 @@
+---
+// Everything between the triple-dashes (---) is the "frontmatter".
+// It runs on the server at build time — never in the browser.
+// Here we define what props (inputs) this layout accepts.
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Leonardo Raul Velasco — AI Engineer & QA Specialist',
+  description = 'AI Agent Developer and QA Engineer specializing in SmythOS, test automation, and building reliable intelligent systems.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <style>
+      /* Animated gradient for hero name */
+      @keyframes gradient-shift {
+        0%   { background-position: 0% 50%; }
+        50%  { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .animated-gradient {
+        background: linear-gradient(270deg, #38bdf8, #818cf8, #38bdf8);
+        background-size: 300% 300%;
+        animation: gradient-shift 6s ease infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Floating orbs */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50%       { transform: translateY(-20px); }
+      }
+      .float { animation: float 7s ease-in-out infinite; }
+      .float-slow { animation: float 10s ease-in-out infinite; }
+
+      /* Fade-in for hero elements */
+      @keyframes fade-up {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      .hero-fade-1 { animation: fade-up 0.6s ease forwards; animation-delay: 0.1s; opacity: 0; }
+      .hero-fade-2 { animation: fade-up 0.6s ease forwards; animation-delay: 0.25s; opacity: 0; }
+      .hero-fade-3 { animation: fade-up 0.6s ease forwards; animation-delay: 0.4s; opacity: 0; }
+      .hero-fade-4 { animation: fade-up 0.6s ease forwards; animation-delay: 0.55s; opacity: 0; }
+      .hero-fade-5 { animation: fade-up 0.6s ease forwards; animation-delay: 0.7s; opacity: 0; }
+    </style>
+  </head>
+
+  <body class="bg-navy-900 text-slate-100 font-sans antialiased overflow-x-hidden">
+    <!-- <slot /> is where the page content gets injected -->
+    <slot />
+
+    <!-- AOS init — runs after the page loads -->
+    <!-- is:inline tells Astro not to bundle these — keeps them as plain <script> tags in the HTML -->
+    <script is:inline src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script is:inline>
+      AOS.init({
+        duration: 700,   // animation duration in ms
+        once: true,      // animate only once (not every time you scroll back up)
+        offset: 60,      // px from bottom of screen to trigger
+        easing: 'ease-out-cubic',
+      });
+    </script>
+  </body>
+</html>
